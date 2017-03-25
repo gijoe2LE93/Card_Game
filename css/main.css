@@ -1,8 +1,24 @@
+*{
+  flex: auto;
+}
+
 body{
   background: grey;
 }
 
+p{
+  text-align: center;
+  padding-top: .5cm;
+}
+#container{
+  width: 95%;
+  margin: auto;
+  background-color: green;
+}
+
 .card{
+  align-self: center;
+  align-content: center;
   height: 100px;
   width: 100px;
   background-color: purple;
@@ -18,16 +34,16 @@ body{
 }
 
 .card {
-vertical-align: middle;
-display: inline-block;
-background-color: green;
-height: 100px;
-width: 100px;
-border: black 5px solid;
-text-align: center;
-padding-top: 10px;
-font-size: 100%;
-line-height: 250px;
+  vertical-align: middle;
+  display: inline-block;
+  background-color: green;
+  height: 100px;
+  width: 100px;
+  border: black 5px solid;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 100%;
+  line-height: 250px;
 }
 
 #player1{
@@ -41,7 +57,19 @@ line-height: 250px;
   padding: 10px;
 }
 
-#score{
+.score{
+text-align: center;
+height: 200px;
 padding: 10px;
+border: 3px solid;
+}
 
+#output {
+  text-align: right;
+  min-width: 95%;
+  height: auto;
+  padding: 5% 1%;
+  margin-bottom: 10%;
+  background-color: #FDFEFE;
+  box-shadow: 1px 1px 1px gray, -1px -1px 1px gray;
 }
