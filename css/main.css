@@ -1,0 +1,47 @@
+body{
+  background: grey;
+}
+
+.card{
+  height: 100px;
+  width: 100px;
+  background-color: purple;
+  border: 2px solid gold;
+
+}
+
+#board{
+  border: black solid 5px;
+  background-color: yellow;
+  height: 800px;
+  width: 800px;
+}
+
+.card {
+vertical-align: middle;
+display: inline-block;
+background-color: green;
+height: 100px;
+width: 100px;
+border: black 5px solid;
+text-align: center;
+padding-top: 10px;
+font-size: 100%;
+line-height: 250px;
+}
+
+#player1{
+  background-color: gold;
+  padding: 15px 10px 10px 10px;
+
+}
+
+#player2{
+  background-color: purple;
+  padding: 10px;
+}
+
+#score{
+padding: 10px;
+
+}
