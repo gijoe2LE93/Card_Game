@@ -1,11 +1,21 @@
 $(function(){
-var $card = $('.card');
-  var $Cardturn   = function() {             // checks to see if rds played <
+  var $card = $('.card');
+  var $Cardturn   = function() {  //add this to control which card is clicked
+    $p1card1 = true; // has not been clicked before
+    if ($p1card1 === true) {
+      p1card1 = Math.floor((Math.random() * 10) + 1);
+      console.log(p1card1);        // display card points
+      player1Points= p1card1;
+      console.log(player1Points);
+      //then turn $p1card1 === false so it can't be clicked again
+      //stop the card from being able to be clicked again
+      // } else if (p1card2 has been clicked) {
+      }                               // checks to see if rds played <
     console.log("I've been clicked");
   };
-    $card.on('click',$Cardturn);
+  $card.on('click',$Cardturn);
 
-
+  var p1card1 = $('#p1card1');$
 
 console.log('card game files attached');
 }); // onload ends
@@ -26,8 +36,10 @@ var deckCards =                       //array of all cards to be played
 {name: "Rattata", damage:30}, {name: "Squirtle", damage:60},
 {name: "Vulpix", damage:50}, {name: "Weedle", damage:40}];
 
-var player1Cards = [];        //array of p1 cards
-var player2Cards = [];        //array of p2 cards
+var player1Cards = [{name: "Bulbasaur", damage:60},
+                   {name: "Caterpie", damage:40}];        //array of p1 cards
+var player2Cards = [{name: "Bulbasaur", damage:60},
+                   {name: "Caterpie", damage:40}];         //array of p2 cards
 var player1CardsPlayed = [];  //array of p1 cards played in the game
 var player2CardsPlayed = [];  //array of p2 cards played in the game
 var carPoints = [];           //array of all cards for play
@@ -37,6 +49,12 @@ var player1rdsWon = 0;
 var player2rdsWon = 0;
 var deckCardsremaning  = 18;
 var rdsPlayed = 0;
+var $p1card1 = $('#p1card1');
+var $p1card2 = $('#p1card2');
+var $p1card3 = $('#p1card3');
+var $p2card1 = $('#p2card1');
+var $p2card2 = $('#p2card2');
+var $p2card3 = $('#p2card3');
 // var $card = $('.card');
 
 
@@ -69,7 +87,7 @@ var dealCards = function(){
 
   for (var i = 1; i < deckCards.length; i++) {
     if (deckCards.length > 6) {
-      player1Cards = deckCards.name;
+      player1Cards = deckCards;
       player2Cards = deckCards.name;
       deckCardsremaning-=6;
 
