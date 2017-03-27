@@ -36,10 +36,8 @@ var deckCards =                       //array of all cards to be played
 {name: "Rattata", damage:30}, {name: "Squirtle", damage:60},
 {name: "Vulpix", damage:50}, {name: "Weedle", damage:40}];
 
-var player1Cards = [{name: "Bulbasaur", damage:60},
-                   {name: "Caterpie", damage:40}];        //array of p1 cards
-var player2Cards = [{name: "Bulbasaur", damage:60},
-                   {name: "Caterpie", damage:40}];         //array of p2 cards
+var player1Cards = [];        //array of p1 cards
+var player2Cards = [];         //array of p2 cards
 var player1CardsPlayed = [];  //array of p1 cards played in the game
 var player2CardsPlayed = [];  //array of p2 cards played in the game
 var carPoints = [];           //array of all cards for play
@@ -62,7 +60,19 @@ var $p2card3 = $('#p2card3');
 // functions
 // -------------
 //---------------------
-var gameWinner = function () {}   // function to determine the gameWinner
+var gameWinner = function () {        // function to determine the gameWinner
+  if (player1rdsWon > player2rdsWon) {
+    alert('Player 1 Wins!!');
+  } else if (player1rdsWon < player2rdsWon) {
+      alert('Player 2 Wins!!');
+  } else if (player1rdsWon === player2rdsWon) {
+    alert('The game is a draw!')
+  } gameStart()
+};
+
+
+
+
 //---------------------
 //  gameStart
  // is a function that asks the players if they'd like to play a game of BigBank if yes the board listens for player 1 to click a card (1||2||3) onclick the rd start function.
@@ -85,20 +95,25 @@ var gameStart = function() {
 //---------------------
 var dealCards = function(){
 
-  for (var i = 1; i < deckCards.length; i++) {
-    if (deckCards.length > 6) {
-      player1Cards = deckCards;
-      player2Cards = deckCards.name;
+  for (var i = 0; i < 3; i++) {
+    // if (deckCards.length > 6) {
+    //   player1Cards = deckCards;
+    //   player2Cards = deckCards.name;
       deckCardsremaning-=6;
+    var player1hand = deckCards[i];
+    console.log('player1hand = ' + player1hand.name + " " + player1hand.damage);
+    var player2hand = deckCards[i+3];
+    console.log('player2hand = ' + player2hand.name + " "+ player2hand.damage)
+    // var player1Hand = deckCards[i][i];
 
       console.log("player1 cards" + player1Cards);
-      console.log("player2 cards" + player2Cards);
+      // console.log("player2 cards" + player2Cards);
       console.log('deckCardsremaning' + deckCardsremaning);
     }
-    else {
-      console.log('not enough cards');
-  }
-  }
+  //   else {
+  //     console.log('not enough cards');
+  // }
+  // }
 };
 //---------------------
 // startRd
