@@ -7,9 +7,12 @@ $(function(){
   var $p2card2 = $('#p2card2');
   var $p2card3 = $('#p2card3');
   var $card = $('.card');
+  var toggle = true;
 
-  $card.on('click',cardTurn);
-
+  // console.log("Trying to get the Div",$('#p1card1'));
+  $card.on('click',p1cardTurn);
+  // $card.on('click',p2cardTurn);
+  gameStart();
   // var p1card1 = $('#p1card1');
 
   console.log('card game files attached');
@@ -24,8 +27,8 @@ var deckCards =                       //array of all cards to be played
 [{name: "Bulbasaur", damage:60},{name: "Caterpie", damage:40},
 {name: "Charmander", damage:60},{name: "Clefairy", damage:50},
 {name: "Jigglypuff", damage:60},{name: "Mankey", damage:30},
-{name: "Meowth", damage:60},{name: "Nidoran - female", damage:60},
-{name: "Nidoran - male", damage:50},{name: "Oddish", damage:40},
+{name: "Meowth", damage:60},{name: "NidoranF", damage:60},
+{name: "NidoranM", damage:50},{name: "Oddish", damage:40},
 {name: "Pidgey", damage:50},{name: "Pikachu", damage:50},
 {name: "Poliwag", damage:50},{name: "Psyduck", damage:60},
 {name: "Rattata", damage:30}, {name: "Squirtle", damage:60},
@@ -70,11 +73,11 @@ var gameWinner = function () {        // function to determine the gameWinner
 
 //---------------------
 var gameStart = function() {
-  var input = prompt('Would you like to play a game of BigBank?', 'Y,N');
-    if (input = 'Y') {
+  // var input = prompt('Would you like to play a game of BigBank?', 'Y,N');
+  //   if (input = 'Y') {
       shuffle(deckCards);
       dealCards();
-    }
+  //  }
 
 };
 //---------------------
@@ -92,18 +95,25 @@ var dealCards = function(){
 
     var player1PopCard = deckCards.pop();
     player1Cards.push(player1PopCard)
+    // console.log(player1Cards[i].name);
 
     var player2PopCard = deckCards.pop();
-    player2Cards.push(player2PopCard)
+    player2Cards.push(player2PopCard);
 
   }
-    console.log("deckcards" , deckCards);
-    console.log("player1Cards" , player1Cards);
-    console.log("player2Cards" , player2Cards);
+    // var cardsRemaining = $('.score').append(deckCards.length);
+    // $('#output').append(cardsRemaining);
+    // console.log(deckCards.length);
+    // console.log("deckcards" , deckCards);
+    // // console.log("player1Cards" , player1Cards);
+    // console.log("player2Cards" , player2Cards);
+    // console.log("Trying to get the Div",$('#p1card1'));
+    // $('#p1card1').css('background-color', 'red').text(player1Cards.name);
 
 };
 //---------------------
-//
+// shuffle function from stack Overflow
+//---------------------
 function shuffle(a) {
     var j, x, i;
     for (i = a.length; i; i--) {
@@ -114,50 +124,93 @@ function shuffle(a) {
     }
 }
 
+//---------------------
 // startRd
 // is a function to turn over the cards on click to reveal the card number
 // create a listner for the cards
-//---------------------
-var cardTurn   = function() {  //add this to control which card is clicked
-  $p1card1 = true; // has not been clicked before
-  if ($p1card1 === true) {
-    p1card1 = Math.floor((Math.random() * 10) + 1);
-    console.log(p1card1);        // display card points
-    player1Points= p1card1;
-    console.log(player1Points);
 
-    console.log("I've been clicked");
-  };
-}
+var p1cardTurn   = function() {      //add this to control which card is clicked
+    var toggle = true;
+    for (var i = 0; i < 3; i++) {
 
-// }var $Cardturn   = function() {             // checks to see if rds played <
-//   console.log("I've been clicked");
-// };
-//   $card.on('click',$Cardturn);
+      if (toggle === true) {
+          $('#p1card1').text(player1Cards[0].name + " " + player1Cards[0].damage);
+          toggle = false
+          p2cardTurn();
+
+      } else if (toggle === true){
+          $('#p1card2').text(player1Cards[1].name + " " + player1Cards[1].damage);
+          toggle = false
+
+      } else if (toggle === true) {
+          $('#p1card3').text(player1Cards[2].name + " " + player1Cards[2].damage);
+          $('#p1card3') = false
+          toggle = false
+      }
+
+    }
+};
+
+var p2cardTurn   = function() {      //add this to control which card is clicked
+          console.log('Hello Im player2');
+    for (var i = 0; i < 3; i++) {
+
+        if ($('#p2card1').onclick === true) {
+          $('#p1card2').text(player2Cards[0].name + " " + player2Cards[0].damage);
+          $('#p2card1') = false
+
+        } else if (($('#p2card2').onclick === true)) {
+          $('#p2card2').text(player2Cards[1].name + " " + player2Cards[1].damage);
+          $('#p1card2') = false
+
+        } else if (($('#p2card3').onclick === true)) {
+            $('#p2card3').text(player2Cards[2].name + " " + player2Cards[2].damage);
+          p1cardTurn();
+        }
+
+      }
+
+};
+
+
+
+    // console.log(player1Cards);
+    // console.log(player1Cards[1]);
+    // console.log(player1Cards[2]);
+    //
+    //
+    // $('#p1card2').append(player1Cards[1]);
+    // $('#p1card3').append(player1Cards[2]);
+
+
+
+
+
+
+
 
 //---------------------
-var roundWinner = function ()  {} // checks if p1 pts > p2 pts
-                                  // checks if cards have turned 6 times
-                                  // increments rd counter
-//---------------------
-//---------------------
-var endOfRound = function ()   {} // check if each player has touched 3 cards
-//---------------------
-//---------------------
-// var cardTouch = function()     {} // clicks card and turns it over
-//---------------------
-//---------------------
-var rdsWonTotal =  function () {} // var player1rdsWon - var player2rdsWon
-//---------------------
-//---------------------
-var player1Points = function() {} // player1Points +=
-//---------------------
-//---------------------
-var player2Points = function() {} // player2Points +=
-//---------------------
+// var roundWinner = function ()  {}; // checks if p1 pts > p2 pts
+//                                   // checks if cards have turned 6 times
+//                                   // increments rd counter
+// //---------------------
+// //---------------------
+// var endOfRound = function ()   {}; // check if each player has touched 3 cards
+// //---------------------
+// //---------------------
+// // var cardTouch = function()     {} // clicks card and turns it over
+// //---------------------
+// //---------------------
+// var rdsWonTotal =  function () {}; // var player1rdsWon - var player2rdsWon
+// //---------------------
+// //---------------------
+// var player1Points = function() {}; // player1Points +=
+// //---------------------
+// //---------------------
+// var player2Points = function() {}; // player2Points +=
+// //---------------------
 
 
 
 // function call
 // -----------------
-gameStart();
