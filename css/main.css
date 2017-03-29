@@ -16,13 +16,6 @@ p{
   background-color: green;
 }
 
-.card{
-  align-self: center;
-  align-content: center;
-  height: 100px;
-  width: 100px;
-  background-color: purple;
-  border: 2px solid gold;
 
 }
 
@@ -35,6 +28,8 @@ p{
 
 .card {
   vertical-align: middle;
+  background-color: purple;
+  border: gold;
   display: inline-block;
   height: 100px;
   width: 100px;
@@ -45,6 +40,18 @@ p{
   line-height: 250px;
 }
 
+.cardP2 {
+  vertical-align: middle;
+  background-color: gold;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  border: purple 5px solid;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 100%;
+  line-height: 250px;
+}
 #player1{
   background-color: gold;
   padding: 15px 10px 10px 10px;
