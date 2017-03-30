@@ -1,81 +1,103 @@
 *{
-  flex: auto;
-}
-
-body{
-  background: grey;
-}
-
-p{
-  text-align: center;;;
-  padding-top: .5cm;
+  margin: 0;
+  padding: 0;
 }
 .container{
-  width: 95%;
-  margin: auto;
-  background-color: green;
-}
-
+  background: url("pokeball.svg");
 
 }
+body{
 
-#board{
-  border: black solid 5px;
-  background-color: yellow;
-  height: 800px;
-  width: 800px;
+  background-color: khaki;
 }
 
-.card {
-  vertical-align: middle;
-  background-color: purple;
-  border: gold;
+.card{
+  margin: 0 auto;
+  width: 150px;
+  height: 200px;
+  /*border: solid 5px black;*/
+  border-radius: 10px;
   display: inline-block;
-  height: 100px;
-  width: 100px;
-  border: black 5px solid;
-  text-align: center;
-  padding-top: 10px;
-  font-size: 100%;
-  line-height: 250px;
+  background: url("../images/pokemon.png");
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+
 }
 
-.cardP2 {
-  vertical-align: middle;
-  background-color: gold;
+.cardP2{
+  width: 150px;
+  height: 200px;
+  /*border: solid 5px black;*/
+  border-radius: 10px;
   display: inline-block;
-  height: 100px;
-  width: 100px;
-  border: purple 5px solid;
-  text-align: center;
-  padding-top: 10px;
-  font-size: 100%;
-  line-height: 250px;
-}
-#player1{
-  text-align: center;
-  background-color: gold;
-  padding: 15px 10px 10px 10px;
+  background: url("../images/pikachu.jpg");
 }
 
-.rds1{
-  display:inline-table;
-  padding: 10px;
+h1{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+}
+
+h3{
+  vertical-align: bottom;
+}
+
+.p1score{
+  text-align: center;
+}
+
+.p2score{
+  text-align: center;
+  margin-top: 30px;
 }
 
 .score{
-text-align: center;
-margin-top: auto;
-display: block;
-height: 200px;
-padding: 10px;
-border: 1px solid;
+  border: 5px black solid;
+  margin-top: 30px;
+  text-align: center;
 }
 
-#output {
-  text-align: right;
-  width: 10%;
-  margin-bottom: 0%;
-  background-color: #FDFEFE;
-  box-shadow: 1px 1px 1px gray, -1px -1px 1px gray;
+h2{
+  text-align: center;
+}
+
+.Player1{
+display: inline-block;
+margin-right: 60px;
+}
+
+.Player2{
+display: inline-block;
+margin-left: 60px;
+}
+
+.pts1{
+  display: inline-block;
+}
+
+.rds1{
+  display: inline-block;
+}
+.pts2{
+  display: inline-block;
+}
+
+.rds2{
+  display: inline-block;
+}
+
+.scorep2{
+  display: inline-block;
+}
+
+.rdcount{
+  position: relative;
+  bottom: 100%;
+}
+
+.rdcount h2{
+  position: absolute;
+  bottom: 100%;
 }

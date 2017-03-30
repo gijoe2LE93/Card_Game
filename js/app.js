@@ -1,5 +1,5 @@
 $(function(){
-
+console.log("pokemon app.js file loaded");
   var $p1card1 = $('#p1card1');
   var $p1card2 = $('#p1card2');
   var $p1card3 = $('#p1card3');
@@ -94,9 +94,11 @@ var dealCards = function(){
   }
 
 };
+
 //------------------------------------------------------------------------------
 // shuffle function from stack Overflow
 //------------------------------------------------------------------------------
+
 function shuffle(a) {
   var j, x, i;
   for (i = a.length; i; i--) {
@@ -141,8 +143,8 @@ var p1cardTurn   = function() {
       p1Damage = player1Cards[0].damage;
       console.log(p1Damage);
       checkRdScore();
-    }
-    else if (player1Count === 1) {
+
+    }else if (player1Count === 1) {
       $('#p1card2').text(player1Cards[1].name + " " + player1Cards[1].damage);
       checkRdScore();
 
@@ -193,24 +195,21 @@ var p2cardTurn   = function() {
 
 var checkRdScore = function (){
   if (player1Count === player2Count) {
+
     if (player1Cards[player1Count].damage > player2Cards[player2Count].damage)
 
     { player1Points ++;
       $('.pts1').append().text(player1Points);
 
     } else if (player1Cards[player1Count].damage < player2Cards[player2Count].damage){
+
       player2Points++;
       $('.pts2').append().text(player2Points);
-
     }
 
     console.log("These are Player 1 points " + player1Points);
     console.log("These are Player 2 Points " + player2Points);
-
-
   };
-  //
-
 };
 //------------------------------------------------------------------------------
 // Round Checker check if each player has touched 3 cards then increments the // round counter and assigns a round winner
@@ -220,16 +219,15 @@ var endOfRound = function() {
     alert('Player 1 wins the round!')
     player1rdsWon ++;
     $('.rds1').append().text(player1rdsWon);
+    console.log(player1rdsWon);
 
   }else {
     alert('Player 2 wins the round')
     player2rdsWon ++;
     $('.rds1').append().text(player2rdsWon);
-
+    console.log(player2rdsWon);
   };
   reset();
-
-
 };
 
 //------------------------------------------------------------------------------
@@ -263,6 +261,14 @@ var reset = function() {
   $('#p2card2').text('Card2');
   $('#p2card3').text('Card3');
 
+  if (rdsPlayed ===3) {
+    if (player1rdsWon > player2rdsWon) {
+      alert("Player 1 is the game winner")
+    } else {
+      alert("Game Winner Player 2");
+    }
+    reset();
+  };
 //Need to append roundsplayed count into the DOM.
 
   console.log("Hi I'm the reset function");

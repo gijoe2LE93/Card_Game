@@ -1,47 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/main.css">
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous">
-      </script>
-    <title>Card Game</title>
-
-  </head>
-  <body>
-    <script type="text/javascript"src="js/app.js"> </script>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/main.css">
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous">
+  </script>
+  <title>Card Game</title>
+</head>
+<body>
+  <h1>Pokemon Card Game</h1>
   <div class="container">
-    <div class="score">
-      <div id="p1card1" class="card"> Card 1</div>
+    <div class="p1score">
+      <div id="p1card1" class="card"> <h2>Card 1</h2></div>
       <div id="p1card2" class="card"> Card 2</div>
       <div id="p1card3" class="card"> Card 3</div>
-        <p>Player 1</p>
+      <p>Player 1</p>
     </div>
-    <div class="score">
+    <div class="p2score">
       <div id="p2card1" class="cardP2"> Card 1</div>
       <div id="p2card2" class="cardP2"> Card 2</div>
       <div id="p2card3" class="cardP2"> Card 3</div>
       <p>Player 2</p>
     </div>
-      <section  class="score">Score Board
-        <div class="Player1">
-          <p>Player 1</p>
+    <div class="rdcount"><h2>Round Played</h2></div>
+    <section  class="score">
+      <h2>Score Board</h2>
+      <br>
+      <div class="Player1">
+        <h3>Player 1</h3>
+        <div class="scorep1">
           <h5>Points</h5>
           <h5 class= "pts1">0</h5>
           <h5>Rounds</h5>
           <h5 class= "rds1">0</h5>
         </div>
-        <div class="Player2">
-          <p>Player 2</p>
+      </div>
+      <div class="Player2">
+        <h3>Player 2</h3>
+        <div class="scorep2">
           <h5>Points</h5>
-          <h5 class = "pts2">0</h5>
+          <h5 class = "pts2">0 </h5>
           <h5>Rounds</h5>
           <h5 class = "rds2">0</h5>
         </div>
-      </section>
+      </div>
+    </section>
   </div>
-  </body>
+  <script src="js/app.js" charset="utf-8"></script>
+</body>
 </html>
