@@ -51,7 +51,7 @@ var rdsPlayed = 0;
 // =============================================================================
 
 var gameWinner = function () {
-  console.log("Hi I'm the gameWinner function"); // function to determine the gameWinner
+
   if (player1rdsWon > player2rdsWon) {
     alert('Player 1 Wins the game!!');
   } else if (player1rdsWon < player2rdsWon) {
@@ -67,11 +67,11 @@ var gameWinner = function () {
 //------------------------------------------------------------------------------
 
 var gameStart = function() {
-  var input = prompt('Would you like to play a game of BigBank?', 'Y,N');
-  if (input = 'Y') {
+  // var input = prompt('Would you like to play a game of BigBank?', 'Y,N');
+  // if (input = 'Y') {
     shuffle(deckCards);
     dealCards();
-  }
+  // }
 
 };
 //------------------------------------------------------------------------------
@@ -224,7 +224,7 @@ var endOfRound = function() {
   }else {
     alert('Player 2 wins the round')
     player2rdsWon ++;
-    $('.rds1').append().text(player2rdsWon);
+    $('.rds2').append().text(player2rdsWon);
     console.log(player2rdsWon);
   };
   reset();

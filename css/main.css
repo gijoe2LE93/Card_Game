@@ -3,12 +3,16 @@
   padding: 0;
 }
 .container{
-  background: url("pokeball.svg");
+  background: url("../images/21aygx0.gif");
+  background-size: 200px;
+  background-repeat: no-repeat;
 
 }
 body{
+  background-color: rgb(255,228,155);
+  /*background: url("../images/cfuegosp81.gif");*/
+  background-repeat: no-repeat;
 
-  background-color: khaki;
 }
 
 .card{
@@ -21,10 +25,10 @@ body{
   background: url("../images/pokemon.png");
   background-size: 100% 100%;
   background-repeat:no-repeat;
-
 }
 
 .cardP2{
+  margin: 25;
   width: 150px;
   height: 200px;
   /*border: solid 5px black;*/
@@ -37,7 +41,6 @@ h1{
   text-align: center;
   margin-top: 30px;
   margin-bottom: 30px;
-
 }
 
 h3{
@@ -49,12 +52,13 @@ h3{
 }
 
 .p2score{
+  color: inherit;
   text-align: center;
   margin-top: 30px;
 }
 
 .score{
-  border: 5px black solid;
+  border: 2px blue solid;
   margin-top: 30px;
   text-align: center;
 }
@@ -88,6 +92,10 @@ margin-left: 60px;
   display: inline-block;
 }
 
+.score{
+  background-repeat:no-repeat;
+  align-content:space-between;
+}
 .scorep2{
   display: inline-block;
 }
@@ -100,4 +108,9 @@ margin-left: 60px;
 .rdcount h2{
   position: absolute;
   bottom: 100%;
+}
+
+.p1card1{
+  background-color: white;
+  text-align: center;
 }
