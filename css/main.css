@@ -53,18 +53,20 @@ p{
   line-height: 250px;
 }
 #player1{
+  text-align: center;
   background-color: gold;
   padding: 15px 10px 10px 10px;
-
 }
 
-#player2{
-  background-color: purple;
+.rds1{
+  display:inline-table;
   padding: 10px;
 }
 
 .score{
 text-align: center;
+margin-top: auto;
+display: block;
 height: 200px;
 padding: 10px;
 border: 1px solid;
