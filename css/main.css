@@ -10,7 +10,7 @@
 }
 body{
   background-color: rgb(255,228,155);
-  background: url("../images/cfuegosp81.gif");
+  /*background: url("../images/cfuegosp81.gif");*/
   background-repeat: no-repeat;
 
 }
@@ -19,7 +19,7 @@ body{
   margin: 0 auto;
   width: 150px;
   height: 200px;
-  /*border: solid 5px black;*/
+  border: solid 5px black;
   border-radius: 10px;
   display: inline-block;
   background: url("../images/pokemon.png");
@@ -31,7 +31,7 @@ body{
   margin: 25;
   width: 150px;
   height: 200px;
-  /*border: solid 5px black;*/
+  border: solid 5px black;
   border-radius: 10px;
   display: inline-block;
   background: url("../images/pikachu.jpg");
